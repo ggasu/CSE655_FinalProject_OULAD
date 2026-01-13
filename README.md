@@ -67,3 +67,37 @@ CSE655_FinalProject_OULAD/
 ├── README.md
 └── .gitignore
 
+---
+
+## 🗂 File Descriptions
+
+| File / Folder | Description |
+|---------------|------------|
+| data/ | OULAD dataset files |
+| notebooks/01_Data_Preprocessing.ipynb | Main training & evaluation notebook |
+| requirements.txt | Required Python libraries |
+| README.md | Project documentation |
+
+---
+
+## 🖥 Hardware Requirements
+
+• CPU is sufficient  
+• GPU is recommended but not mandatory  
+• Minimum RAM: 8 GB  
+
+---
+
+## 🚀 Training & Inference Steps
+
+1. Install dependencies:
+pip install -r requirements.txt
+
+2. Download the dataset and place into `data/`
+
+3. Run:
+notebooks/01_Data_Preprocessing.ipynb
+
+This notebook performs preprocessing, training, evaluation, and SHAP explainability.
+
+
