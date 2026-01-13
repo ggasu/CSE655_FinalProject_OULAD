@@ -1,87 +1,69 @@
-🎯 Objective
+# 🎓 Explainable Student Risk Prediction (OULAD)
 
-To develop an interpretable AI system that can:
+**CSE655 – Deep Learning Final Project**  
+**Author:** Gamze Suiçmez  
 
-Predict student failure risk early
+This project presents an **explainable deep learning system** that predicts whether a student is *at-risk* or *successful* by analyzing demographic data, virtual learning behavior, and temporal exam performance.  
+The goal is to enable **early, transparent, and data-driven academic intervention**.
 
-Identify critical learning patterns
+---
 
-Support data-driven educational intervention strategies
+## 📊 Dataset
 
-🗂 Dataset
+The model is built on the **OULAD – Open University Learning Analytics Dataset**, which includes:
 
-OULAD – Open University Learning Analytics Dataset
+• Student demographics  
+• Virtual Learning Environment (VLE) activity  
+• Assessment and exam scores  
 
-Includes:
+---
 
-Student demographics
+## 🧠 Model
 
-Virtual Learning Environment (VLE) activity
+The architecture is an **Attention-based Bidirectional LSTM** designed to capture learning behavior over time.
 
-Assessment and exam scores
+| Component | Description |
+|----------|-------------|
+| Input | 22 features (static + temporal) |
+| BiLSTM | Captures learning dynamics |
+| Attention | Focuses on critical exam periods |
+| BatchNorm + Dropout | Training stabilization & regularization |
+| Dense (Sigmoid) | Risk probability output |
 
-🏗 Model Architecture
-Layer	Description
-Input	22 features (static + temporal)
-BiLSTM	Captures bidirectional learning dynamics
-Attention	Highlights critical assessment moments
-BatchNorm	Stabilizes training
-Dropout	Prevents overfitting
-Dense (Sigmoid)	Risk probability output
-📈 Results
-Metric	Score
-Accuracy	0.84
-ROC-AUC	0.91
-F1 (At-Risk)	0.79
-F1 (Success)	0.87
+---
 
-The model successfully identifies students at risk before final failure occurs.
+## 📈 Performance
 
-🔍 Explainability (XAI)
+| Metric | Score |
+|-------|------|
+| Accuracy | **0.84** |
+| ROC-AUC | **0.91** |
+| F1 (At-Risk) | **0.79** |
+| F1 (Success) | **0.87** |
 
-SHAP (Shapley Additive Explanations) is used for:
+The model successfully identifies students at risk **before final failure occurs**.
 
-Global feature importance
+---
 
-Individual student explanation
+## 🔍 Explainability
 
-Early vs late exam influence comparison
+Model decisions are interpreted using **SHAP (Shapley Additive Explanations)**, providing:
 
-Transparent decision interpretation
+• Global feature importance  
+• Individual student explanations  
+• Early vs late exam influence analysis  
+• Transparent decision reasoning  
 
-📂 Repository Structure
+---
+
+## 📂 Repository Structure
+
+```text
 CSE655_FinalProject_OULAD/
 │
-├── data/           # OULAD dataset files
-├── notebooks/      # Training & evaluation notebooks
+├── data/        # OULAD dataset files
+├── notebooks/   # Training & evaluation notebooks
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 
-⚙ Installation
-pip install -r requirements.txt
-
-▶ Usage
-
-Run the main notebook:
-
-notebooks/01_Data_Preprocessing.ipynb
-
-
-Includes preprocessing, training, evaluation and SHAP explainability.
-
-⭐ Key Contributions
-
-Attention-based temporal modeling
-
-Explainable student risk prediction
-
-Interpretable educational analytics pipeline
-
-📚 References
-
-Lundberg & Lee (2017) – SHAP
-
-Graves & Schmidhuber (2005) – BiLSTM
-
-OULAD – Open University Learning Analytics Dataset
